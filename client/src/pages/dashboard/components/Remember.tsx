@@ -12,6 +12,7 @@ const Remember = () => {
 
       <div className="bg-red-400 border">
         <p>Texto descriptivo</p>
+        <small>Today date</small>
       </div>
     </article>
   )
