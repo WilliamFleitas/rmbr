@@ -20,7 +20,7 @@ const Remember = () => {
       <div className='border w-full flex flex-col py-4 px-4'>
         <strong>Dont forget</strong>
       </div>
-      <div className='flex flex-row text-start items-center justify-start border-y w-full h-fit mt-4 px-6 py-4 gap-4'>
+      <div className='customInnerBoxShadow flex flex-row text-start items-center justify-start  w-full h-fit mt-4 px-6 py-10 gap-14'>
         <PostCard postData={postData[0]}/>
         <PostCard postData={postData[1]}/>
       </div>

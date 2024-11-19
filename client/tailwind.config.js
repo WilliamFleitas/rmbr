@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
     extend: {
+      colors: {
+        'primary-dark': 'var(--color-primary-dark)',
+        'box-shadow-dark': 'var(--color-boxShadow-dark)',
+        'shadow-border-dark': 'var(--color-boxShadow-border-dark)',
+      },
       fontSize: {
         'xs': '0.7rem', 
         'sm': '0.75rem',
