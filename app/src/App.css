@@ -1,12 +1,12 @@
 
 
-
+/* 
 .customBoxShadow {
     -webkit-box-shadow: 0px 0px 8px 8px var(--color-boxShadow-dark);
     -moz-box-shadow: 0px 0px 8px 8px var(--color-boxShadow-dark);
-    box-shadow: 0px 0px 8px 8px var(--color-boxShadow-dark); 
+    box-shadow: 0px 0px 4px 8px var(--color-boxShadow-dark); 
     isolation: isolate;
-}
+} */
 
 .customInnerBoxShadow {
     -webkit-box-shadow: inset 0px 0px 10px 2px var(--color-boxShadow-dark);

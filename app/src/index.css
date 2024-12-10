@@ -4,9 +4,9 @@
 
 
 :root {
-  --color-primary-dark: rgb(75, 75, 75);
-  --color-boxShadow-dark: rgba(22, 22, 22, 0.7);
-  --color-boxShadow-border-dark: rgba(41, 41, 41, 0.7);
+  --color-primary-dark: rgb(56, 56, 56);
+  --color-boxShadow-dark: rgb(44, 44, 44);
+  --color-boxShadow-border-dark: rgba(54, 54, 54, 0.7);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--color-primary-dark);
