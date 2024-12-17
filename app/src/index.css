@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --color-primary-dark: rgb(56, 56, 56);
+  --color-boxShadow-dark: rgb(44, 44, 44);
+  --color-boxShadow-border-dark: rgba(54, 54, 54, 0.7);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-primary-dark);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 2;
+}
+

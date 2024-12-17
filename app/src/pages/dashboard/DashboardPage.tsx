@@ -3,7 +3,7 @@ import Remember from './components/Remember'
 
 const DashboardLayout = () => {
   return (
-    <div>
+    <div className='flex flex-col w-full h-fit '>
       <main>
         <Outlet />
       </main>

@@ -29,4 +29,7 @@ export default defineConfig({
         : {},
     }),
   ],
+  build: {
+    rollupOptions:{external:["node_nodules/better-sqlite3"]} 
+  }
 })
