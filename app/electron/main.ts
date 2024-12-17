@@ -1,20 +1,12 @@
-import { app, BrowserWindow } from 'electron'
-import { createRequire } from 'node:module'
+import { app, BrowserWindow} from 'electron'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
-const require = createRequire(import.meta.url)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// The built directory structure
-//
-// ├─┬─┬ dist
-// │ │ └── index.html
-// │ │
-// │ ├─┬ dist-electron
-// │ │ ├── main.js
-// │ │ └── preload.mjs
-// │
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+console.log("__dasd", __dirname)
+
 process.env.APP_ROOT = path.join(__dirname, '..')
 
 // 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
@@ -25,12 +17,17 @@ export const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist')
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST
 
 let win: BrowserWindow | null
+const isDev = !app.isPackaged;
+
 
 function createWindow() {
   win = new BrowserWindow({
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
+      devTools: isDev,
+      contextIsolation: true,
+      nodeIntegration: false,    
     },
   })
 
@@ -46,6 +43,25 @@ function createWindow() {
     win.loadFile(path.join(RENDERER_DIST, 'index.html'))
   }
 }
+
+
+
+// ipcMain.handle('ping-pong', async (event, message) => {
+//   console.log('Ping recibido desde el renderizador:',event, message);
+//   return 'Pong';
+// });
+
+
+
+app.whenReady().then(() => {
+  createWindow();
+
+  // Initialize the database after the app is ready
+  // initializeDatabase();
+}).catch((err) => {
+  console.error('Error during app initialization:', err);
+});
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -64,5 +80,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-app.whenReady().then(createWindow)
